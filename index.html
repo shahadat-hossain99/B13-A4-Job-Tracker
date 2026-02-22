@@ -94,6 +94,9 @@
         </button>
       </div>
 
+      <!--! Filtered job section -->
+      <section id="filtered-section"></section>
+
       <section
         class="w-4/5 mx-auto max-w-6xl mt-[30px] space-y-4 pb-16"
         id="job-card-container"
@@ -107,20 +110,20 @@
             <!-- company name and position -->
 
             <div>
-              <h6 class="font-semibold text-lg text-[#002C5C]">
+              <h6 class="companyName font-semibold text-lg text-[#002C5C]">
                 Mobile First Corp
               </h6>
-              <p class="text-[#64748B]">React Native Developer</p>
+              <p class="postName text-[#64748B]">React Native Developer</p>
             </div>
 
             <!-- location,type and salary -->
             <div class="md:flex gap-2.5 text-[14px] text-[#64748B]">
-              <span>Remote</span>
+              <span class="place">Remote</span>
               <ul class="md:flex gap-2">
-                <li class="flex items-center gap-1.5">
+                <li class="workPlace flex items-center gap-1.5">
                   <i class="fa-solid fa-circle text-[5px]"></i> Full time
                 </li>
-                <li class="flex items-center gap-1.5">
+                <li class="salary flex items-center gap-1.5">
                   <i class="fa-solid fa-circle text-[5px]"></i> $130,000 -
                   $175,000
                 </li>
@@ -133,7 +136,7 @@
                 class="job-status py-2 px-3 rounded-lg font-medium text-[#002C5C] bg-[#EEF4FF]"
                 >NOT APPLIED</span
               >
-              <p class="mt-4">
+              <p class="jobDescription mt-4">
                 Build cross-platform mobile applications using React Native.
                 Work on products used by millions of users worldwide.
               </p>
@@ -171,20 +174,20 @@
             <!-- company name and position -->
 
             <div>
-              <h6 class="font-semibold text-lg text-[#002C5C]">
+              <h6 class="companyName font-semibold text-lg text-[#002C5C]">
                 WebFlow Agency
               </h6>
-              <p class="text-[#64748B]">Web Designer & Developer</p>
+              <p class="postName text-[#64748B]">Web Designer & Developer</p>
             </div>
 
             <!-- location,type and salary -->
             <div class="md:flex gap-2.5 text-[14px] text-[#64748B]">
-              <span>Los Angeles, CA </span>
+              <span class="place">Los Angeles, CA </span>
               <ul class="md:flex gap-2">
-                <li class="flex items-center gap-1.5">
+                <li class="workPlace flex items-center gap-1.5">
                   <i class="fa-solid fa-circle text-[5px]"></i> Part-time
                 </li>
-                <li class="flex items-center gap-1.5">
+                <li class="salary flex items-center gap-1.5">
                   <i class="fa-solid fa-circle text-[5px]"></i> $80,000 -
                   $120,000
                 </li>
@@ -197,7 +200,7 @@
                 class="job-status py-2 px-3 rounded-lg font-medium text-[#002C5C] bg-[#EEF4FF]"
                 >NOT APPLIED</span
               >
-              <p class="mt-4">
+              <p class="jobDescription mt-4">
                 Create stunning web experiences for high-profile clients. Must
                 have portfolio and experience with modern web design trends.
               </p>
@@ -235,20 +238,22 @@
             <!-- company name and position -->
 
             <div>
-              <h6 class="font-semibold text-lg text-[#002C5C]">
+              <h6 class="companyName font-semibold text-lg text-[#002C5C]">
                 DataViz Solutions
               </h6>
-              <p class="text-[#64748B]">Data Visualization Specialist</p>
+              <p class="postName text-[#64748B]">
+                Data Visualization Specialist
+              </p>
             </div>
 
             <!-- location,type and salary -->
             <div class="md:flex gap-2.5 text-[14px] text-[#64748B]">
-              <span>Boston, MA </span>
+              <span class="place">Boston, MA </span>
               <ul class="md:flex gap-2">
-                <li class="flex items-center gap-1.5">
+                <li class="workPlace flex items-center gap-1.5">
                   <i class="fa-solid fa-circle text-[5px]"></i> Full-time
                 </li>
-                <li class="flex items-center gap-1.5">
+                <li class="salary flex items-center gap-1.5">
                   <i class="fa-solid fa-circle text-[5px]"></i> $125,000 -
                   $165,000
                 </li>
@@ -261,7 +266,7 @@
                 class="job-status py-2 px-3 rounded-lg font-medium text-[#002C5C] bg-[#EEF4FF]"
                 >NOT APPLIED</span
               >
-              <p class="mt-4">
+              <p class="jobDescription mt-4">
                 Transform complex data into compelling visualizations. Required
                 skills: D3.js, React, and strong analytical thinking.
               </p>
@@ -299,20 +304,20 @@
             <!-- company name and position -->
 
             <div>
-              <h6 class="font-semibold text-lg text-[#002C5C]">
+              <h6 class="companyName font-semibold text-lg text-[#002C5C]">
                 Cloud-First Inc
               </h6>
-              <p class="text-[#64748B]">Backend Developer</p>
+              <p class="postName text-[#64748B]">Backend Developer</p>
             </div>
 
             <!-- location,type and salary -->
             <div class="md:flex gap-2.5 text-[14px] text-[#64748B]">
-              <span>Seattle, WA </span>
+              <span class="place">Seattle, WA </span>
               <ul class="md:flex gap-2">
-                <li class="flex items-center gap-1.5">
+                <li class="workPlace flex items-center gap-1.5">
                   <i class="fa-solid fa-circle text-[5px]"></i> Full-time
                 </li>
-                <li class="flex items-center gap-1.5">
+                <li class="salary flex items-center gap-1.5">
                   <i class="fa-solid fa-circle text-[5px]"></i> $140,000 -
                   $190,000
                 </li>
@@ -325,7 +330,7 @@
                 class="job-status py-2 px-3 rounded-lg font-medium text-[#002C5C] bg-[#EEF4FF]"
                 >NOT APPLIED</span
               >
-              <p class="mt-4">
+              <p class="jobDescription mt-4">
                 Design and maintain scalable backend systems using Python and
                 AWS. Work with modern DevOps practices and cloud infrastructure.
               </p>
@@ -363,20 +368,20 @@
             <!-- company name and position -->
 
             <div>
-              <h6 class="font-semibold text-lg text-[#002C5C]">
+              <h6 class="companyName font-semibold text-lg text-[#002C5C]">
                 Innovation Labs
               </h6>
-              <p class="text-[#64748B]">UI/UX Engineer</p>
+              <p class="postName text-[#64748B]">UI/UX Engineer</p>
             </div>
 
             <!-- location,type and salary -->
             <div class="md:flex gap-2.5 text-[14px] text-[#64748B]">
-              <span>Austin, TX </span>
+              <span class="place">Austin, TX </span>
               <ul class="md:flex gap-2">
-                <li class="flex items-center gap-1.5">
+                <li class="workPlace flex items-center gap-1.5">
                   <i class="fa-solid fa-circle text-[5px]"></i> Full-time
                 </li>
-                <li class="flex items-center gap-1.5">
+                <li class="salary flex items-center gap-1.5">
                   <i class="fa-solid fa-circle text-[5px]"></i>$110,000 -
                   $150,000
                 </li>
@@ -389,7 +394,7 @@
                 class="job-status py-2 px-3 rounded-lg font-medium text-[#002C5C] bg-[#EEF4FF]"
                 >NOT APPLIED</span
               >
-              <p class="mt-4">
+              <p class="jobDescription mt-4">
                 Create beautiful and functional user interfaces for our suite of
                 products. Strong design skills and frontend development
                 expertise required.
@@ -428,20 +433,20 @@
             <!-- company name and position -->
 
             <div>
-              <h6 class="font-semibold text-lg text-[#002C5C]">
+              <h6 class="companyName font-semibold text-lg text-[#002C5C]">
                 MegaCorp Solutions
               </h6>
-              <p class="text-[#64748B]">JavaScript Developer</p>
+              <p class="postName text-[#64748B]">JavaScript Developer</p>
             </div>
 
             <!-- location,type and salary -->
             <div class="md:flex gap-2.5 text-[14px] text-[#64748B]">
-              <span>New York, NY </span>
-              <ul class="md:flex gap-2">
-                <li class="flex items-center gap-1.5">
+              <span class="place">New York, NY </span>
+              <ul class="jobList md:flex gap-2">
+                <li class="workPlace flex items-center gap-1.5">
                   <i class="fa-solid fa-circle text-[5px]"></i> Full-time
                 </li>
-                <li class="flex items-center gap-1.5">
+                <li class="salary flex items-center gap-1.5">
                   <i class="fa-solid fa-circle text-[5px]"></i>$130,000 -
                   $170,00
                 </li>
@@ -454,7 +459,7 @@
                 class="job-status py-2 px-3 rounded-lg font-medium text-[#002C5C] bg-[#EEF4FF]"
                 >NOT APPLIED</span
               >
-              <p class="mt-4">
+              <p class="jobDescription mt-4">
                 Build enterprise applications with JavaScript and modern
                 frameworks. We offer competitive compensation, health insurance,
                 and professional development opportunities.
@@ -492,18 +497,20 @@
             <!-- company name and position -->
 
             <div>
-              <h6 class="font-semibold text-lg text-[#002C5C]">StartupXYZ</h6>
-              <p class="text-[#64748B]">Full Stack Engineer</p>
+              <h6 class="companyName font-semibold text-lg text-[#002C5C]">
+                StartupXYZ
+              </h6>
+              <p class="postName text-[#64748B]">Full Stack Engineer</p>
             </div>
 
             <!-- location,type and salary -->
             <div class="md:flex gap-2.5 text-[14px] text-[#64748B]">
-              <span>Remote </span>
-              <ul class="md:flex gap-2">
-                <li class="flex items-center gap-1.5">
+              <span class="place">Remote </span>
+              <ul class="jobList md:flex gap-2">
+                <li class="workPlace flex items-center gap-1.5">
                   <i class="fa-solid fa-circle text-[5px]"></i> Full-time
                 </li>
-                <li class="flex items-center gap-1.5">
+                <li class="salary flex items-center gap-1.5">
                   <i class="fa-solid fa-circle text-[5px]"></i>$120,000 -
                   $160,000
                 </li>
@@ -516,7 +523,7 @@
                 class="job-status py-2 px-3 rounded-lg font-medium text-[#002C5C] bg-[#EEF4FF]"
                 >NOT APPLIED</span
               >
-              <p class="mt-4">
+              <p class="jobDescription mt-4">
                 Join our fast-growing startup and work on our core platform.
                 Experience with Node.js and React required. Great benefits and
                 equity package included.
@@ -554,20 +561,20 @@
             <!-- company name and position -->
 
             <div>
-              <h6 class="font-semibold text-lg text-[#002C5C]">
+              <h6 class="companyName font-semibold text-lg text-[#002C5C]">
                 TechCorp Industries
               </h6>
-              <p class="text-[#64748B]">Senior Frontend Developer</p>
+              <p class="postName text-[#64748B]">Senior Frontend Developer</p>
             </div>
 
             <!-- location,type and salary -->
             <div class="md:flex gap-2.5 text-[14px] text-[#64748B]">
-              <span>San Francisco, CA </span>
-              <ul class="md:flex gap-2">
-                <li class="flex items-center gap-1.5">
+              <span class="place">San Francisco, CA </span>
+              <ul class="jobList md:flex gap-2">
+                <li class="workPlace flex items-center gap-1.5">
                   <i class="fa-solid fa-circle text-[5px]"></i> Full-time
                 </li>
-                <li class="flex items-center gap-1.5">
+                <li class="salary flex items-center gap-1.5">
                   <i class="fa-solid fa-circle text-[5px]"></i>$120,000 -
                   $160,000
                 </li>
@@ -580,7 +587,7 @@
                 class="job-status py-2 px-3 rounded-lg font-medium text-[#002C5C] bg-[#EEF4FF]"
                 >NOT APPLIED</span
               >
-              <p class="mt-4">
+              <p class="jobDescription mt-4">
                 We are looking for an experienced Frontend Developer to build
                 scalable web applications using React and TypeScript. You will
                 work with a talented team on cutting-edge projects.
