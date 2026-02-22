@@ -37,3 +37,7 @@ function toggleStyle(id) {
 
   selected.classList.add("btn-info", "text-base-100");
 }
+
+// Main function
+
+mainContainer.addEventListener();
