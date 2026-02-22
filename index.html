@@ -44,19 +44,19 @@
         Job Application Tracker
       </h1>
       <div class="grid grid-cols-3 gap-4">
-        <div id="totalCount" class="bg-base-100 p-5 rounded-lg">
+        <div class="bg-base-100 p-5 rounded-lg">
           <p class="text-sm font-medium">Total</p>
-          <p class="text-2xl font-bold">0</p>
+          <p id="totalCount" class="text-2xl font-bold">0</p>
         </div>
 
-        <div id="InterviewCount" class="bg-base-100 p-5 rounded-lg">
+        <div class="bg-base-100 p-5 rounded-lg">
           <p class="text-sm font-medium">Interview</p>
-          <p class="text-2xl font-bold text-success">0</p>
+          <p id="InterviewCount" class="text-2xl font-bold text-success">0</p>
         </div>
 
-        <div id="rejectedCount" class="bg-base-100 p-5 rounded-lg">
+        <div class="bg-base-100 p-5 rounded-lg">
           <p class="text-sm font-medium">Rejected</p>
-          <p class="text-2xl font-bold text-error">0</p>
+          <p id="rejectedCount" class="text-2xl font-bold text-error">0</p>
         </div>
       </div>
     </header>
@@ -70,9 +70,14 @@
 
     <main>
       <div class="w-4/5 max-w-6xl mx-auto space-x-2">
-        <button class="btn btn-info text-base-100 py-2.5 px-8">ALL</button>
-        <button class="btn">Interview</button>
-        <button class="btn">Rejected</button>
+        <button
+          id="all-filter-btn"
+          class="btn btn-info text-bas e-100 py-2.5 px-8"
+        >
+          ALL
+        </button>
+        <button id="interview-filter-btn" class="btn">Interview</button>
+        <button id="rejected-filter-btn" class="btn">Rejected</button>
       </div>
 
       <section
@@ -635,5 +640,8 @@
         </div>
       </div>
     </section>
+
+    <!-- all javascript linked up here -->
+    <script src="./script/count.js"></script>
   </body>
 </html>
