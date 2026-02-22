@@ -39,6 +39,7 @@
   </head>
   <body class="bg-base-200">
     <!-- optional style--bg-base-200 sticky top-0 z-20 for header -->
+
     <header class="w-4/5 max-w-6xl mx-auto space-y-5 pt-14">
       <h1 class="text-[#002C5C] font-extrabold text-2xl">
         Job Application Tracker
@@ -71,13 +72,26 @@
     <main>
       <div class="w-4/5 max-w-6xl mx-auto space-x-2">
         <button
+          onclick="toggleStyle('all-filter-btn')"
           id="all-filter-btn"
-          class="btn btn-info text-bas e-100 py-2.5 px-8"
+          class="btn btn-info text-base-100 py-2.5 px-8"
         >
           ALL
         </button>
-        <button id="interview-filter-btn" class="btn">Interview</button>
-        <button id="rejected-filter-btn" class="btn">Rejected</button>
+        <button
+          onclick="toggleStyle('interview-filter-btn')"
+          id="interview-filter-btn"
+          class="btn"
+        >
+          Interview
+        </button>
+        <button
+          onclick="toggleStyle('rejected-filter-btn')"
+          id="rejected-filter-btn"
+          class="btn"
+        >
+          Rejected
+        </button>
       </div>
 
       <section
@@ -596,52 +610,54 @@
           </div>
         </div>
       </section>
+
+      <!-- interview filtered job cards -->
+
+      <section
+        id="interview-cards"
+        class="w-4/5 mx-auto max-w-6xl mt-[30px] space-y-4 hidden"
+      >
+        <div
+          class="py-[110px] flex gap-5 flex-col justify-center items-center bg-white rounded-lg border border-gray-100"
+          id="interview-skeleton"
+        >
+          <div><img src="./jobs.png" alt="" /></div>
+          <div class="text-center">
+            <h2 class="font-semibold text-2xl text-[#002C5C]">
+              No jobs available
+            </h2>
+            <p class="text-[#64748B]">
+              Check back soon for new job opportunities
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- rejected filtered job cards -->
+
+      <section
+        id="rejected-cards"
+        class="w-4/5 mx-auto max-w-6xl mt-[30px] space-y-4 pb-8 hidden"
+      >
+        <div
+          class="py-[110px] flex gap-5 flex-col justify-center items-center bg-white rounded-lg border border-gray-100"
+          id="rejected-skeleton"
+        >
+          <div><img src="./jobs.png" alt="" /></div>
+          <div class="text-center">
+            <h2 class="font-semibold text-2xl text-[#002C5C]">
+              No jobs available
+            </h2>
+            <p class="text-[#64748B]">
+              Check back soon for new job opportunities
+            </p>
+          </div>
+        </div>
+      </section>
     </main>
 
-    <!-- interview filtered job cards -->
-
-    <section
-      id="interview-cards"
-      class="w-4/5 mx-auto max-w-6xl mt-[30px] space-y-4 hidden"
-    >
-      <div
-        class="py-[110px] flex gap-5 flex-col justify-center items-center bg-white rounded-lg border border-gray-100"
-        id="interview-skeleton"
-      >
-        <div><img src="./jobs.png" alt="" /></div>
-        <div class="text-center">
-          <h2 class="font-semibold text-2xl text-[#002C5C]">
-            No jobs available
-          </h2>
-          <p class="text-[#64748B]">
-            Check back soon for new job opportunities
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- rejected filtered job cards -->
-    <section
-      id="rejected-cards"
-      class="w-4/5 mx-auto max-w-6xl mt-[30px] space-y-4 pb-8 hidden"
-    >
-      <div
-        class="py-[110px] flex gap-5 flex-col justify-center items-center bg-white rounded-lg border border-gray-100"
-        id="rejected-skeleton"
-      >
-        <div><img src="./jobs.png" alt="" /></div>
-        <div class="text-center">
-          <h2 class="font-semibold text-2xl text-[#002C5C]">
-            No jobs available
-          </h2>
-          <p class="text-[#64748B]">
-            Check back soon for new job opportunities
-          </p>
-        </div>
-      </div>
-    </section>
-
     <!-- all javascript linked up here -->
+
     <script src="./script/count.js"></script>
   </body>
 </html>

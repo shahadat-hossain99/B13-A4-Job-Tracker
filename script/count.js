@@ -16,7 +16,24 @@ const mainContainer = document.querySelector("main");
 
 function calculateCount() {
   totalCount.innerText = jobCardContainer.children.length;
-  InterviewCount.innerText = interviewList.children.length;
-  rejectedCount.innerText = rejectedList.children.length;
+  InterviewCount.innerText = interviewList.length;
+  rejectedCount.innerText = rejectedList.length;
 }
 calculateCount();
+
+// toggle
+
+const allFilterBtn = document.getElementById("all-filter-btn");
+const interviewFilterBtn = document.getElementById("interview-filter-btn");
+const rejectedFilterBtn = document.getElementById("rejected-filter-btn");
+
+function toggleStyle(id) {
+  allFilterBtn.classList.remove("btn-info", "text-base-100");
+  interviewFilterBtn.classList.remove("btn-info", "text-base-100");
+  rejectedFilterBtn.classList.remove("btn-info", "text-base-100");
+
+  const selected = document.getElementById(id);
+  console.log(selected);
+
+  selected.classList.add("btn-info", "text-base-100");
+}
