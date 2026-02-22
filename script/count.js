@@ -1,5 +1,6 @@
 let interviewList = [];
 let rejectedList = [];
+let currentStatus = "all";
 
 let totalCount = document.getElementById("totalCount");
 let InterviewCount = document.getElementById("InterviewCount");
@@ -34,13 +35,14 @@ function toggleStyle(id) {
   rejectedFilterBtn.classList.remove("btn-info", "text-base-100");
 
   const selected = document.getElementById(id);
-  console.log(selected);
+  // console.log(selected);
+  currentStatus = id;
 
   selected.classList.add("btn-info", "text-base-100");
 
   if (id == "interview-filter-btn") {
     jobCardContainer.classList.add("hidden");
-
+    constructInterviewList();
     filteredSection.classList.remove("hidden");
   } else if (id == "all-filter-btn") {
     jobCardContainer.classList.remove("hidden");
@@ -50,6 +52,8 @@ function toggleStyle(id) {
     jobCardContainer.classList.add("hidden");
 
     filteredSection.classList.remove("hidden");
+
+    constructRejectList();
   }
 }
 
@@ -74,17 +78,6 @@ mainContainer.addEventListener("click", function (event) {
 
     parentNode.querySelector(".job-status").innerText = "INTERVIEW";
 
-    // console.log(
-    //   companyName,
-    //   postName,
-    //   place,
-    //   jobList
-    //   workPlace,
-    //   salary,
-    //   jobStatus,
-    //   jobDescription,
-    // );
-
     const cardInfo = {
       companyName,
       postName,
@@ -108,9 +101,11 @@ mainContainer.addEventListener("click", function (event) {
       (item) => item.companyName != cardInfo.companyName,
     );
 
+    if (currentStatus == "rejected-filter-btn") {
+      constructRejectList();
+    }
     calculateCount();
-
-    constructInterviewList();
+    // constructInterviewList();
   } else if (event.target.classList.contains("rejected-btn")) {
     const parentNode = event.target.parentNode.parentNode;
     const companyName = parentNode.querySelector(".companyName").innerText;
@@ -159,11 +154,121 @@ mainContainer.addEventListener("click", function (event) {
       (item) => item.companyName != cardInfo.companyName,
     );
 
+    if (currentStatus == "interview-filter-btn") {
+      constructInterviewList();
+    }
+
     calculateCount();
 
-    constructRejectList();
+    // constructRejectList();
   }
 });
+
+// mainContainer.addEventListener("click", function (event) {
+//   console.log(event.target.classList.contains("interview-btn"));
+
+//   if (event.target.classList.contains("interview-btn")) {
+//     const parentNode = event.target.parentNode.parentNode;
+//     const companyName = parentNode.querySelector(".companyName").innerText;
+//     const postName = parentNode.querySelector(".postName").innerText;
+//     const place = parentNode.querySelector(".place").innerText;
+//     // const jobList = parentNode.querySelector(".jobList").innerText;
+//     const workPlace = parentNode.querySelector(".workPlace").innerText;
+//     const salary = parentNode.querySelector(".salary").innerText;
+//     const jobStatus = parentNode.querySelector(".job-status").innerText;
+//     const jobDescription =
+//       parentNode.querySelector(".jobDescription").innerText;
+
+//     parentNode.querySelector(".job-status").innerText = "INTERVIEW";
+
+//     const cardInfo = {
+//       companyName,
+//       postName,
+//       place,
+//       workPlace,
+//       salary,
+//       jobStatus: "INTERVIEW",
+//       jobDescription,
+//     };
+//     // console.log(cardInfo);
+
+//     const companyExist = interviewList.find(
+//       (item) => item.companyName == cardInfo.companyName,
+//     );
+
+//     if (!companyExist) {
+//       interviewList.push(cardInfo);
+//     }
+
+//     rejectedList = rejectedList.filter(
+//       (item) => item.companyName != cardInfo.companyName,
+//     );
+
+//     calculateCount();
+
+//     if (currentStatus == "interview-filter-btn") {
+//       constructInterviewList();
+//     }
+
+//     calculateCount();
+//     // constructInterviewList();
+//   } else if (event.target.classList.contains("rejected-btn")) {
+//     const parentNode = event.target.parentNode.parentNode;
+//     const companyName = parentNode.querySelector(".companyName").innerText;
+//     const postName = parentNode.querySelector(".postName").innerText;
+//     const place = parentNode.querySelector(".place").innerText;
+
+//     const workPlace = parentNode.querySelector(".workPlace").innerText;
+//     const salary = parentNode.querySelector(".salary").innerText;
+//     const jobStatus = parentNode.querySelector(".job-status").innerText;
+//     const jobDescription =
+//       parentNode.querySelector(".jobDescription").innerText;
+
+//     parentNode.querySelector(".job-status").innerText = "REJECTED";
+
+//     // console.log(
+//     //   companyName,
+//     //   postName,
+//     //   place,
+//     //   jobList
+//     //   workPlace,
+//     //   salary,
+//     //   jobStatus,
+//     //   jobDescription,
+//     // );
+
+//     const cardInfo = {
+//       companyName,
+//       postName,
+//       place,
+//       workPlace,
+//       salary,
+//       jobStatus: "REJECTED",
+//       jobDescription,
+//     };
+//     // console.log(cardInfo);
+
+//     const companyExist = rejectedList.find(
+//       (item) => item.companyName == cardInfo.companyName,
+//     );
+
+//     if (!companyExist) {
+//       rejectedList.push(cardInfo);
+//     }
+
+//     interviewList = interviewList.filter(
+//       (item) => item.companyName != cardInfo.companyName,
+//     );
+
+//     calculateCount();
+
+//     if (currentStatus == "rejected-filter-btn") {
+//       constructRejectList();
+//     }
+
+//     // constructRejectList();
+//   }
+// });
 
 function constructInterviewList() {
   filteredSection.innerHTML = " ";
