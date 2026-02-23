@@ -28,3 +28,11 @@
 **Ans:**
 
 1. ==preventDefault()== only stops browser's default action. on the other hand , stopPropagation() method stops event bubbling immediately where it used
+
+<!-- I 1st write it on obsidian than paste here for that the many symbol is showing  -->
+
+🚀 Author--------
+
+Md.Shahadat Hossain
+Aspiring Junior Web Developer
+Frontend Development
