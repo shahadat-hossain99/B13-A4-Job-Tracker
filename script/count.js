@@ -42,8 +42,8 @@ function toggleStyle(id) {
 
   if (id == "interview-filter-btn") {
     jobCardContainer.classList.add("hidden");
-    constructInterviewList();
     filteredSection.classList.remove("hidden");
+    constructInterviewList();
   } else if (id == "all-filter-btn") {
     jobCardContainer.classList.remove("hidden");
 
@@ -59,10 +59,10 @@ function toggleStyle(id) {
 
 // Main function
 
-mainContainer.addEventListener("click", function (event) {
-  //! for interview button
+// 1
 
-  console.log(event.target.classList.contains("interview-btn"));
+mainContainer.addEventListener("click", function (event) {
+  // console.log(event.target.classList.contains("interview-btn"));
 
   if (event.target.classList.contains("interview-btn")) {
     const parentNode = event.target.parentNode.parentNode;
@@ -104,6 +104,11 @@ mainContainer.addEventListener("click", function (event) {
     if (currentStatus == "rejected-filter-btn") {
       constructRejectList();
     }
+
+    // if (currentStatus == "interview-filter-btn") {
+    //   constructInterviewList();
+    // }
+
     calculateCount();
     // constructInterviewList();
   } else if (event.target.classList.contains("rejected-btn")) {
@@ -119,17 +124,6 @@ mainContainer.addEventListener("click", function (event) {
       parentNode.querySelector(".jobDescription").innerText;
 
     parentNode.querySelector(".job-status").innerText = "REJECTED";
-
-    // console.log(
-    //   companyName,
-    //   postName,
-    //   place,
-    //   jobList
-    //   workPlace,
-    //   salary,
-    //   jobStatus,
-    //   jobDescription,
-    // );
 
     const cardInfo = {
       companyName,
@@ -161,9 +155,33 @@ mainContainer.addEventListener("click", function (event) {
     calculateCount();
 
     // constructRejectList();
+  } else if (event.target.closest(".card-delete")) {
+    const card = event.target.closest(".flex"); // whole card
+    const companyName = card.querySelector(".companyName").innerText;
+
+    card.remove();
+
+    interviewList = interviewList.filter(
+      (item) => item.companyName !== companyName,
+    );
+
+    rejectedList = rejectedList.filter(
+      (item) => item.companyName !== companyName,
+    );
+
+    // update counts
+    calculateCount();
+
+    // re-render filtered view if active
+    if (currentStatus === "interview-filter-btn") {
+      constructInterviewList();
+    } else if (currentStatus === "rejected-filter-btn") {
+      constructRejectList();
+    }
   }
 });
 
+// 2
 // mainContainer.addEventListener("click", function (event) {
 //   console.log(event.target.classList.contains("interview-btn"));
 
@@ -204,11 +222,12 @@ mainContainer.addEventListener("click", function (event) {
 //       (item) => item.companyName != cardInfo.companyName,
 //     );
 
-//     calculateCount();
-
-//     if (currentStatus == "interview-filter-btn") {
-//       constructInterviewList();
+//     if (currentStatus == "rejected-filter-btn") {
+//       constructRejectList();
 //     }
+//     // if (currentStatus == "interview-filter-btn") {
+//     //   constructInterviewList();
+//     // }
 
 //     calculateCount();
 //     // constructInterviewList();
@@ -260,21 +279,49 @@ mainContainer.addEventListener("click", function (event) {
 //       (item) => item.companyName != cardInfo.companyName,
 //     );
 
-//     calculateCount();
+//     // if (currentStatus == "interview-filter-btn") {
+//     //   constructInterviewList();
+//     // }
 
 //     if (currentStatus == "rejected-filter-btn") {
 //       constructRejectList();
 //     }
 
+//     calculateCount();
+
 //     // constructRejectList();
+//   } else if (event.target.closest(".card-delete")) {
+//     const card = event.target.closest(".flex"); // whole card
+//     const companyName = card.querySelector(".companyName").innerText;
+
+//     card.remove();
+
+//     interviewList = interviewList.filter(
+//       (item) => item.companyName !== companyName,
+//     );
+
+//     rejectedList = rejectedList.filter(
+//       (item) => item.companyName !== companyName,
+//     );
+
+//     // update counts
+//     calculateCount();
+
+//     // re-render filtered view if active
+//     if (currentStatus === "interview-filter-btn") {
+//       constructInterviewList();
+//     } else if (currentStatus === "rejected-filter-btn") {
+//       constructRejectList();
+//     }
 //   }
 // });
 
 function constructInterviewList() {
-  filteredSection.innerHTML = " ";
+  filteredSection.innerHTML = "";
 
   for (let interview of interviewList) {
     console.log(interview);
+
     let div = document.createElement("div");
     div.className =
       "flex justify-between p-6 bg-base-100 rounded-lg border border-gray-100";
@@ -346,7 +393,7 @@ function constructInterviewList() {
 }
 
 function constructRejectList() {
-  filteredSection.innerHTML = " ";
+  filteredSection.innerHTML = "";
 
   for (let rejected of rejectedList) {
     console.log(rejected);
