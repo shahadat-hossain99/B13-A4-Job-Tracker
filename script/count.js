@@ -5,6 +5,7 @@ let currentStatus = "all";
 let totalCount = document.getElementById("totalCount");
 let InterviewCount = document.getElementById("InterviewCount");
 let rejectedCount = document.getElementById("rejectedCount");
+let countJobs = document.getElementById("count-jobs");
 
 const jobCardContainer = document.getElementById("job-card-container");
 // console.log(jobCardContainer.children.length);
@@ -17,10 +18,21 @@ const filteredSection = document.getElementById("filtered-section");
 // function dashboard count
 
 function calculateCount() {
-  totalCount.innerText = jobCardContainer.children.length;
+  let allTotal = jobCardContainer.children.length;
+  totalCount.innerText = allTotal;
+
   InterviewCount.innerText = interviewList.length;
   rejectedCount.innerText = rejectedList.length;
+
+  if (currentStatus === "interview-filter-btn") {
+    countJobs.innerText = `${interviewList.length} of ${allTotal}`;
+  } else if (currentStatus === "rejected-filter-btn") {
+    countJobs.innerText = `${rejectedList.length} of ${allTotal}`;
+  } else {
+    countJobs.innerText = allTotal;
+  }
 }
+
 calculateCount();
 
 // toggle
@@ -47,6 +59,8 @@ function toggleStyle(id) {
     noJobCard();
   } else if (id == "all-filter-btn") {
     jobCardContainer.classList.remove("hidden");
+    let noCardSection = document.getElementById("no-cards");
+    noCardSection.classList.add("hidden");
 
     filteredSection.classList.add("hidden");
   } else if (id == "rejected-filter-btn") {
@@ -57,6 +71,8 @@ function toggleStyle(id) {
     constructRejectList();
     noJobCard();
   }
+
+  calculateCount();
 }
 
 // Main function
